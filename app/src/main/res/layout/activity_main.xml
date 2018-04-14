@@ -23,10 +23,10 @@ You need a rooted device, otherwise it won't work. \n"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="
-Charge your device completely. Calibrate only when your device is fully charged!
-Your fuel gauge will be reseted and the batterystats.bin file deleted."
+Charge your device completely.
+Calibrate only when your device is fully charged! \n
+Fuel gauge will be reseted and the batterystats file deleted."
         android:textAlignment="center"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info_textView" />
