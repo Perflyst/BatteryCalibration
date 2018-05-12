@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,13 +32,24 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         Process su = Runtime.getRuntime().exec("su");
                         DataOutputStream outputStream = new DataOutputStream(su.getOutputStream());
-                        outputStream.writeBytes("echo 1 > /sys/class/power_supply/battery/batt_reset_soc\n");
-                        outputStream.flush();
-                        outputStream.writeBytes("dumpsys batterystats --reset\n");
-                        outputStream.flush();
-                        outputStream.writeBytes("exit\n");
-                        outputStream.flush();
-                        su.waitFor();
+
+                        File file_batt_reset = new File("/sys/class/power_supply/battery/batt_reset_soc");
+
+                        if(file_batt_reset.exists()) {
+                            outputStream.writeBytes("echo 1 > /sys/class/power_supply/battery/batt_reset_soc\n");
+                            outputStream.flush();
+                            outputStream.writeBytes("dumpsys batterystats --reset\n");
+                            outputStream.flush();
+                            outputStream.writeBytes("exit\n");
+                            outputStream.flush();
+                            su.waitFor();
+                        } else {
+                            outputStream.writeBytes("dumpsys batterystats --reset\n");
+                            outputStream.flush();
+                            outputStream.writeBytes("exit\n");
+                            outputStream.flush();
+                            su.waitFor();
+                        }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
