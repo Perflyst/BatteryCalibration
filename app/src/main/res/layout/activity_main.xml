@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="
 Welcome to the Battery Calibration app. \n
-You need a rooted device, otherwise it won't work. \n"
+This app is useless if your phone isn\'t rooted. \n"
         android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
@@ -24,8 +24,8 @@ You need a rooted device, otherwise it won't work. \n"
         android:layout_marginTop="50dp"
         android:text="
 Charge your device completely.
-Calibrate only when your device is fully charged! \n
-Fuel gauge will be reseted and the batterystats file deleted."
+Calibrate only when your device is fully charged. \n
+The fuel gauge will be reset and the batterystats.bin file will be deleted."
         android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -45,9 +45,9 @@ Fuel gauge will be reseted and the batterystats file deleted."
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="139dp"
         android:layout_marginStart="139dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="50dp"
         android:text="(C) 2018 Perflyst"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
