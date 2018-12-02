@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">BatteryCalibration</string>
+
+    <string name="welcome">
+        Welcome to the Battery Calibration app.
+        This app is useless if your phone isn\'t rooted.
+    </string>
+
+    <string name="instructions">
+        Charge your device completely.
+        Calibrate only when your device is fully charged.
+        The fuel gauge will be reset and the batterystats.bin file will be deleted.
+    </string>
+
+    <string name="calibrate">Calibrate</string>
+    <string name="copyright">© 2018 Perflyst</string>
 </resources>
